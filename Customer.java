@@ -5,15 +5,18 @@ public class Customer {
     private String address;
     private String phoneNumber;
     private String email;
+    private java.util.LinkedList<String> inquiries;
 
     public Customer(String name, String address, String phoneNumber, String email) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.inquiries = new java.util.LinkedList<>();
     }
 
     public void sendInquiry(String message) {
+        inquiries.add(message);
         System.out.println(name + " sent an inquiry: " + message);
     }
     
@@ -31,5 +34,9 @@ public class Customer {
 
     public String getAddress() {
         return address;
+    }
+
+    public java.util.LinkedList<String> getInquiries() {
+        return inquiries;
     }
 }
